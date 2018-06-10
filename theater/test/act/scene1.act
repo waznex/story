@@ -1,19 +1,19 @@
-1,"None","Chapter 1 : First Lesson"
+1,"Title","Chapter 1 : First Lesson\n One day, Chrom was sitting idly by a rock in the ruins when he noticed his daughter approaching."
 2,"Lucina","Might I ask a lesson, Father? I would love to learn the ways of the sword from you."
 3,"Chrom","Oh dear..."
-4,"Choice",["You're a master in your own right already.","What could I possibly teach you?","You're likely better served training alone where you can hone your own style."],[4,5,8]
+4,"Choice",["You're a master in your own right already.","What could I possibly teach you?","You're likely better served training alone where you can hone your own style."],[5,6,9]
 5,"Lucina","But I was hoping that you might..."
 6,"Lucina","That we could..."
 7,"Lucina","..."
 8,"Chrom","Hmm?"
 9,"Lucina","...I'm sorry. If it's a bother, I won't insist."
-10,"Lucina","..."
-11,"None","........."
+10,"Chrom","..."
+11,"Lucina","........."
 12,"None","............"
 13,"Chrom","*sigh*"
 14,"Choice",["I never said it was a bother.","I just meant that with your level of skill, you'd be...","Fine. Go fetch a pair of practice blades."],[10,10,15]
 15,"Lucina","Wonderful!"
-16,"Lucina","I just so happen to have to right here, *giggles*"
+16,"Lucina","I just so happen to have two right here, *giggles*"
 17,"Chrom","Ha, someone's certainly prepared huh..."
 18,"Lucina","Yes, sir!"
 19,"Choice",["*focus on attacking*","*focus on defending*","*unleash full power*"],[20,20,37]
@@ -28,7 +28,7 @@
 28,"None","*vzzzz* *shiiing*"
 29,"Lucina","*pant* *pant*"
 30,"Chrom","Impressive as ever, I was certain I dodged that last one, but you nicked my shoulder"
-31,"Lucina","Still, you had me soundly beat."
+31,"Lucina","Still, you had me soundly beat.",
 32,"Lucina","See? I was right to think you still have much to teach me."
 33,"Lucina","We'll have to make these lessons a habit. *giggles*"
 34,"Chrom","Wait, Did you just throw that match so we will do this again?"
@@ -40,4 +40,4 @@
 40,"Lucina","ARGGGGHHHHH"
 41,"None","*Lucina fell down lifelessly on the floor*"
 42,"Chrom","Ooops, sorry~"
-43,"None","To be continued"
+43,"Title","To be continued"
