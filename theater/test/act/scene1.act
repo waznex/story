@@ -1,7 +1,7 @@
 1,"Title","Chapter 1 : First Lesson\n One day, Chrom was sitting idly by a rock in the ruins when he noticed his daughter approaching."
 2,"Lucina","Might I ask a lesson, Father? I would love to learn the sword from you."
 3,"Chrom","Oh dear..."
-4,"None",["You're a master in your own right already.","What could I possibly teach you?","You're likely better served training alone where you can hone your own style."],[4,5,8]
+4,"Choice",["You're a master in your own right already.","What could I possibly teach you?","You're likely better served training alone where you can hone your own style."],[4,5,8]
 5,"Lucina","But I was hoping that you might..."
 6,"Lucina","That we could..."
 7,"Lucina","..."
@@ -11,12 +11,12 @@
 11,"None","........."
 12,"None","............"
 13,"Chrom","*sigh*"
-14,"None",["I never said it was a bother.","I just meant that with your level of skill, you'd be...","Fine. Go fetch a pair of practice blades."],[10,10,15]
+14,"Choice",["I never said it was a bother.","I just meant that with your level of skill, you'd be...","Fine. Go fetch a pair of practice blades."],[10,10,15]
 15,"Lucina","Wonderful!"
 16,"Lucina","I just so happen to have to right here, *giggles*"
 17,"Chrom","Ha, someone's certainly prepared huh..."
 18,"Lucina","Yes, sir!"
-19,"None",["*focus on attacking*","*focus on defending*","*unleash full power*"],[20,20,37]
+19,"Choice",["*focus on attacking*","*focus on defending*","*unleash full power*"],[20,20,37]
 20,"Lucina","Yaaaah"
 21,"None","*shiiiiing*"
 22,"None","*swishh* *swooshh* *clang*"
