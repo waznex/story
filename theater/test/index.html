@@ -1,1 +1,160 @@
+<html>
+<head>
+	<meta name="viewport">
+	<style>
+		body {background: linear-gradient(blue, cyan, darkblue); margin: 0px;}
+		.content {max-width: 980px; margin: 0px auto; border: 5px solid darkblue;}
+		.menubar {background-color: darkblue; height: 25px; padding: 5px;}
+		.logo {font-size: 16px; font-weight: bold; color: white; : 5px;}
+		.stage {background: url(images/stage2.png) no-repeat;background-size: cover;background-position: center; min-height: 540px; height: 90vh; position: relative;}
+		.txt {background-color: black; opacity: 0.70; padding: 10px; font-size: 16px; font-weight: bold; color: white;font-family: Verdana}
+		
+		.title {text-align: center;margin: auto;float: right;} 
+		.name{font-size: 20px; font-weight: bold;}
+		.dialog {position: absolute;float: left; bottom: 0; width: 80%; margin: 20px; border: 3px solid white; border-radius: 10px; height: 180px;}
 
+		.Chrom .img{background: url(images/Chrom.png) no-repeat; height: 256px;width: 256px;background-position: 0px -256px; }
+		.right .img{zoom:1.5;float: left; position: absolute; bottom: 0; right: 0; z-index: 2}
+		.right .dialog {right:0;}
+		
+		.Lucina .img{background: url(images/Lucina.png) no-repeat; height: 256px;width: 256px;background-position: -512px 0px; -webkit-transform: scaleX(-1); transform: scaleX(-1);}
+		.left .img{zoom:1.5;float: left; position: absolute; bottom: 0; left: 0; z-index: 2}
+		.left .dialog{left: 0}
+		.left p, .left .name{margin-left: 256px;}
+
+		.center .dialog {text-align: center; margin: 0; width: 100%; border: none;  max-width: 960px; border-radius: 0px; height: 30%; bottom: 5%}
+		.top .dialog{top: 30%;}
+
+		.dialog .option {border: 3px white solid; margin: 1% 20%; border-radius: 20px;  padding: 10px;}
+		.dialog .option:hover {border: 3px yellow solid; background-color: yellow; color: brown; cursor: pointer;}
+
+		.actor {display: none;}
+
+
+	</style>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script>
+		$(document).ready(function(){
+			console.log("ready!");
+			start();
+		});
+
+		function start(){
+			readScript();
+		}
+
+		var scene = [];
+		var line = 0;
+
+		function readScript(){
+		    $.ajax({
+		        url : "https://raw.githubusercontent.com/waznex/waznex.github.io/master/theater/test/act/scene1.act",
+		        dataType: "text",
+		        success : function (data) {
+		            var raw = data.split('\n');
+		            for (var x in raw){
+		            	var obj = JSON.parse("["+raw[x]+"]");
+		            	console.log(obj);
+		            	scene.push(obj);
+		            }
+		            next();
+		        }
+		    });
+			
+		}		
+
+		function next(){
+			if (typing)
+				return;
+
+			console.log(scene[line]);
+			$(".actor").hide();
+
+			var actor = scene[line][1];
+			$("."+actor).show();
+
+			if (actor == "Choice"){
+				$(".Choice").show();
+				$(".Choice .dialog").html("");
+				for (var x in scene[line][2]){
+					$(".Choice .dialog").append("<div class='option' next='" + scene[line][3][x] + "''>" + scene[line][2][x] + "</div>");
+				}
+				$(".option").on("click",function(event){line=$(event.target).attr("next");next()});
+			} else {
+				var dialog = scene[line][2];
+				var box = $("."+actor+" .dialog .typetxt");
+				box.html("");
+				typeWriter(box,dialog,0)
+				if (scene[line].length>3){
+					line = scene[line].length[3];
+				} else {
+					line++;	
+				}
+			}
+		}
+
+		var typing = false;
+
+		function typeWriter(el,txt,i) {
+		  typing = true;
+		  if (i < txt.length) {
+		    el.append(txt.charAt(i));
+		    i++;
+		    setTimeout(function(){typeWriter(el,txt,i)},60);
+		  } else {
+		  	typing = false;
+		  }
+		}
+	</script>
+</head>
+<body>
+	<div class='content'>
+		<div class='menubar'>
+			<span class="logo">WazNex?</span>
+		</div>
+		<div class='stage' onclick="next()">
+			<div class='header txt'>
+				<span>Fire Emblem : Awakening</span>
+			</div>
+			<div class='Chrom right actor'>
+				<div class='img'></div>
+				<div class='dialog txt'>
+					<div class='name'>
+						Chrom
+					</div>
+					<hr/>
+					<p class="typetxt"></p>
+				</div>
+			</div>
+			<div class='Lucina left actor'>
+				<div class='img'></div>
+				<div class='dialog txt'>
+					<div class='name'>
+						Lucina
+					</div>
+					<hr/>
+					<p class="typetxt"></p>
+				</div>
+			</div>
+			<div class='None center actor'>
+				<div class='img'></div>
+				<div class='dialog txt'>
+					<p class="typetxt"></p>
+				</div>
+			</div>
+			<div class='Choice center top actor'>
+				<div class='img'></div>
+				<div class='dialog txt'>
+					<div class='option'>
+					</div>
+					<div class='option'>
+					</div>
+					<div class='option'>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>
