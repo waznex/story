@@ -1,4 +1,4 @@
-1,"Title","Chapter 1 : First Lesson\n One day, Chrom was sitting idly by a rock in the ruins when he noticed his daughter approaching."
+1,"None","Chapter 1 : First Lesson\n One day, Chrom was sitting idly by a rock in the ruins when he noticed his daughter approaching."
 2,"Lucina","Might I ask a lesson, Father? I would love to learn the sword from you."
 3,"Chrom","Oh dear..."
 4,"Choice",["You're a master in your own right already.","What could I possibly teach you?","You're likely better served training alone where you can hone your own style."],[4,5,8]
@@ -40,4 +40,4 @@
 40,"Lucina","ARGGGGHHHHH"
 41,"None","*Lucina fell down lifelessly on the floor*"
 42,"Chrom","Ooops, sorry~"
-43,"Title","To be continued"
+43,"None","To be continued"
